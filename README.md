@@ -1,0 +1,1 @@
+Replicate Redding and Rossi-Hansberg (2017, ARE)
