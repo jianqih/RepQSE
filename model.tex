@@ -136,14 +136,153 @@ breaklinks=true
 
 \begin{document}
 \section{Model}
-Preference: 
+An economy: a set $N$ regions indexed by $n$. Each region is endowed with an exogenous quality-adjusted supply of land $H_i$. $\bar{L}$ workers. Iceberg cost: $b_{ni} = b_{in}>1= b_{ii}$. 
+
+Preference over consumption $C_n$ and residential land use $h_n$
 \begin{equation}
-    U_n = \left( \frac{C_n}{\alpha } \right)^{\alpha } \left( \frac{h_n}{1-\alpha } \right)^{1-\alpha }
+    U_n = \left( \frac{C_n}{\alpha } \right)^{\alpha } \left( \frac{h_n}{1-\alpha } \right)^{1-\alpha },\quad 0<\alpha <1
 \end{equation}
 The consumption $C_n$ is defined by CES preference:
 \begin{equation}
-    C_n = \left[ \sum_{i \in N} \int_{0}^{M_i} c_{ni}(j)^\rho d j\right]^{\frac{1}{\rho}},\quad P_n = \left[ \sum_{i \in N} \int_{0}^{M_i} c_{ni}(j)^\rho d j\right]^{\frac{1}{\rho}}
+    C_n = \left[ \sum_{i \in N} \int_{0}^{M_i} c_{ni}(j)^\rho d j\right]^{\frac{1}{\rho}},\quad P_n = \left[ \sum_{i \in N} \int_{0}^{M_i} p_{ni}(j)^{1-\sigma } \mathrm{d} j\right]^{\frac{1}{1-\sigma}}\label{eq:pn}
 \end{equation}
+The production of labor is 
+\begin{equation}
+  l_i (j ) = F + \frac{x_i(j)}{A_i}\label{eq:labor}
+\end{equation}
+We can rewrite $$ x_i(j) = (l_i(j)-F)A_i $$ which implies the $MPL = \frac{w_i}{A_i}$ is fixed. 
+Profit maximization and zero profit imply: 
+\begin{equation}
+  p_{ni}(j) = \underbrace{\frac{\sigma }{\sigma -1}}_{\text{markup}} d_{ni} \frac{w_i}{A_i},\label{eq:pnij}
+\end{equation}
+and equilibrium output of each variety is equal to a constant that depends on location productivity:
+\begin{equation}
+  x_i (j) = \bar{x}_i = A_i (\sigma -1) F,
+\end{equation}
+Plug in Eq~\eqref{eq:labor} we have
+\begin{equation}
+  l_i (j ) =  \bar{l} = \sigma F.
+\end{equation}
+\paragraph{Equilibrium.} Given the constant equilibrium employment for each variety, labor market clearing implies the total measure of varieties supplied
+\begin{equation}
+  L_i = \sum_{j}^{} l_i (j) = \bar{l} M_i \Rightarrow M_i = \frac{L_i}{\sigma F}\label{eq:li}
+\end{equation}
+\paragraph{Price indices and expenditure shares.} 
+Using Eq~\eqref{eq:pnij} and labor market clearing Eq~\eqref{eq:li}, one can express the price index dual to the consumption index ~\eqref{eq:pn} as:
+\begin{equation}
+  P_n = \frac{\sigma }{\sigma -1} \left( \frac{1}{\sigma F} \right)^{\frac{1}{1-\sigma }} \left[ \sum_{i \in N}^{} L_i \left( d_{ni} \frac{w_i}{A_i} \right)^{1-\sigma } \right]^{\frac{1}{1-\sigma }}\label{eq:pni}
+\end{equation}
+Using the equilibrium prices and labor market clearing, the share of location $n$'s expenditure on goods produced in location $i$ is 
+\begin{equation}
+  \pi _{ni} = \frac{M_i p_{ni}^{1-\sigma }}{\sum_{k \in N}^{}M_k p_{nk}^{1-\sigma }} = \frac{L_i \left( d_{ni} \frac{w_i}{A_i} \right)^{1-\sigma }}{\sum_{k \in N}^{}L_k \left( d_{nk} \frac{w_k}{A_k} \right)^{1-\sigma }}\label{eq:pi}
+\end{equation}
+% Since $x(i) = (\sigma -1)FA_i$. 
+Further, we can derive the gravity equation for goods trade, where the bilateral trade between locations $n$ and $i$. 
+using \eqref{eq:pni} and \eqref{eq:pi} we have 
+\begin{equation}
+  P_n = \frac{\sigma }{\sigma -1} \left( \frac{L}{\sigma F \pi _{nn}} \right)^{\frac{1}{1-\sigma }} \frac{w_n}{A_n}. \label{eq:pn}
+\end{equation}
+Trade balance at each location implies that per capita income $v_n$ equal $w_n$ (wage income) plus per capita expenditure on residential land, $(1-\alpha ) v_n$. namely,
+\begin{equation}
+  v_n L_n = w_n L_n + (1-\alpha ) v_n L_n \Rightarrow v_n 
+   = \frac{w_n}{\alpha }. 
+\end{equation}
+By combining land market clearing condition $L_n h_n = H_n$ with the FOC of consumer problem $r_n H_n = (1-\alpha ) L_n v_n$, 
+\begin{equation}
+  r_n = \frac{(1-\alpha ) v_n L_n}{H_n} = \frac{1-\alpha }{\alpha } \frac{w_n L_n}{H_n}. \label{eq:rn}
+\end{equation}
+Population mobility implies that workers receive the same \textit{real income} in all populated locations, thus 
+\begin{equation}
+  V_n = \frac{v_n}{P_n^\alpha r_n^{1-\alpha }} = \bar{V}
+\end{equation}
+where the price index = $P_n^\alpha r_n^{1-\alpha }$. 
+Using the prices Eq~\eqref{eq:rn} and Eq~\eqref{eq:pn}
+Therefore, the location 
+\begin{equation}
+  \bar{V} = \frac{A_n^\alpha H_n^{1-\alpha } \pi _{nn}^{-\alpha /(\sigma -1)} L_n^{- \frac{\sigma (1-\alpha )-1}{\sigma -1}}}{\alpha \left( \frac{\sigma }{\sigma -1} \right)^{\alpha } \left( \frac{1}{\sigma F} \right)^{\frac{\alpha }{1-\sigma }}\left( \frac{1-\alpha }{\alpha } \right)^{1-\alpha }}
+\end{equation}
+\paragraph{Gains from trade.}
+$$ \frac{V_n^T}{V_n^A} = \left(\pi_{nn}^T \right)^{- \frac{\alpha }{\sigma -1}} \left( \frac{L_n^T}{L_n^A} \right)^{- \frac{\sigma (1-\alpha )-1}{\sigma -1}} $$
+The population share of each location: 
+\begin{equation}
+  \lambda _n = \frac{L_n}{\bar{L}} = \frac{\left[ A_n^\alpha H_n^{1-\alpha } \pi _{nn}^{-\alpha /(\alpha -1)} \right]^{\frac{\sigma -1}{\sigma (1-\alpha )-1}}}{\sum_{k \in N}^{}\left[ A_k^\alpha H_k^{1-\alpha } \pi _{kk}^{-\alpha /(\alpha -1)} \right]^{\frac{\sigma -1}{\sigma (1-\alpha )-1}}}
+\end{equation}
+where each location's domestic trade share $\pi _{nn}$ summarizes its market access to other locations.  
+
+
+
+
+\subsection{General Equilibrium}
+Two systems of equations across locations. \begin{itemize}
+  \item Population mobility.  
+  \item Gravity of trade flows
+\end{itemize}
+\paragraph{Population.}
+Using $P_n^\alpha  = \frac{v_n}{\bar{V} r_n^{1-\alpha }}$, $v_n = w_n/\alpha $, and land market clearing ($r_n = \frac{1-\alpha }{\alpha } \frac{w_n L_n}{H_n}$)
+\begin{equation}
+  P_n = \frac{w_n}{\bar{W}} \left( \frac{H_n}{L_n} \right)^{\frac{1-\alpha }{\alpha }}, \quad \bar{W} \equiv \left[ \alpha \left( \frac{1-\alpha }{\alpha } \right)^{1-\alpha } \bar{V} \right]^{\frac{1}{\alpha }}
+\end{equation}
+Recall $$ P_n = \frac{\sigma }{\sigma -1} \left( \frac{1}{\sigma F} \right)^{\frac{1}{1-\sigma }} \left[ \sum_{i \in N}^{} L_i \left( d_{ni}  \frac{w_i}{A_i}\right)^{1-\sigma } \right]^{\frac{1}{1-\sigma }} $$
+Obtain a first wage equation from population mobility 
+\begin{equation}
+  \bar{W}^{1-\sigma } \frac{1}{\sigma F} \left( \frac{\sigma }{\sigma -1} \right)^{1-\sigma } = \frac{w_i^{1-\sigma } \left( \frac{H_i}{L_i} \right)^{(1-\sigma ) \frac{1-\alpha }{\alpha }}}{\sum_{n \in N}^{} L_n \left( d_{in} \frac{w_n}{A_n} \right)^{1-\sigma }}\label{eq:sys1}
+\end{equation}
+% The properties of the general equilibrium of the model can be characterized analytically. 
+\paragraph{Gravity.}
+Gravity and income equals expenditure implies: 
+\begin{equation}
+  w_i L_i = \sum_{n \in N}^{} \frac{\frac{L_i}{\sigma F} \left( \frac{\sigma }{\sigma -1} d_{ni} \frac{w_i}{A_i} \right)^{1-\sigma }}{P_n^{1-\sigma }} w_n L_n.
+\end{equation}
+Recall the price index can be expressed as \eqref{eq:pn}, Obtain a second wage equation from gravity \begin{equation}
+  w_i^\sigma A_i^{1-\sigma } = \sum_{n \in N}^{} \pi _{nn} d_{ni}^{1-\sigma } w_n^\sigma A_n^{1-\sigma }.
+\end{equation}
+Using our expression for the domestic trade share on previous, slide this wage equation from gravity becomes
+\begin{equation}
+\tilde{W}_{1-\sigma} \frac{1}{\sigma F} \left( \frac{\sigma}{\sigma - 1} \right)^{1-\sigma} = \frac{w_i^{\sigma} A_i^{1-\sigma}}{\sum_{n \in \mathcal{N}} d_{ni}^{1-\sigma} L_n (\sigma - 1)^{1-\alpha} H_n^{(\sigma - 1)^{1-\alpha}} w_n^{\sigma}}\label{eq:sys2}
+\end{equation}
+Using two systems of equations~\eqref{eq:sys1}~\eqref{eq:sys2} for wages and population yields closed-form solution 
+\begin{equation}
+  w_n^{1-2\sigma} A_n^{\sigma -1} L_n^{(\sigma -1)\frac{1-\alpha }{\alpha }} H_n^{-(\sigma -1)\frac{1-\alpha }{\alpha }} = \phi .
+\end{equation}
+After that, this system can be reduced to a single equation that determines the equilibrium population:
+\begin{equation}
+  L_n ^{\tilde{\sigma }\gamma _1} A_n ^{- \frac{(\sigma -1) (\sigma -1)}{2\sigma - 1}} H_n ^{- \frac{(\sigma -1) (\sigma -1)}{\alpha(2\sigma - 1)}} = \bar{W}^{1-\sigma } \sum_{i \in N}^{} \frac{1}{\sigma F} \left( \frac{\sigma }{\sigma -1} d_{ni} \right)^{1-\sigma } \left( L_i ^{\tilde{\sigma }\gamma _1} \right)^{\frac{\gamma _2}{\gamma _1}} A_i ^{- \frac{\sigma (\sigma -1)}{2\sigma - 1}} H_i ^{\frac{(1-\alpha)(\sigma -1) (\sigma -1)}{\alpha(2\sigma - 1)}}
+\end{equation}
+where $\bar{W}$ is determined by the requirement that the labor market clears $\sum_{n \in N}^{} L_n = \bar{L}$. 
+and $$ \tilde{\sigma } \equiv \frac{\sigma -1}{2 \sigma -1}, \gamma _1 \equiv \sigma \frac{1-\alpha }{\alpha }, \gamma _2 \equiv 1 + \frac{\sigma }{\sigma -1}- (\sigma -1) \frac{1-\alpha }{\alpha } $$
+
+\begin{pros}
+Assume $\sigma (1-\alpha )>1$, given the land area, productivity and amenity parameters $\left\{ H_n,A_n,B_n \right\}$ and symmetric bilateral trade frictions $\left\{ d_{ni} \right\}$ for all locations $n,i \in N$, there exist unique equilibrium populations $(L_n^*)$ that solve this system of equations. 
+\end{pros}
+
+\subsection{Market access}
+Model provides micro-foundations for a theory-consistent measure of market access. 
+\begin{itemize}
+  \item Ad hoc measures of market potential following Harris (1954): $$ MP _{nt} = \sum_{i \in N}^{} \frac{L_{it}}{dist_{ni}} $$ 
+  \item Theory-based measure highlights the role of price indexes. 
+\end{itemize}
+We now examine the predictions of the model for the equilibrium relationship between wages, population and market access. 
+
+Market access is itself an endogenous variable. 
+
+Combining profit maximization, zero profits, CES demand and market clearing, we obtain the following wage equation:
+$$ \left( \frac{\sigma }{\sigma -1} \frac{w_i}{A_i}\right)^\sigma = \frac{1}{\bar{x}_i} FMA_i $$
+\begin{equation}
+  w_i = \left( \frac{\sigma -1}{\sigma } \right)^{\frac{\sigma -1}{\sigma }} A_i^{\frac{\sigma -1}{\sigma }} (\bar{I})^{-\frac{1}{\sigma }} (FMA_i)^{\frac{1}{\sigma }}
+\end{equation}
+where firm market access is defined as $$ FMA_i \equiv \sum_{n \in N}^{} d_{ni}^{1-\sigma } (w_n L_n)(P_n)^{\sigma -1} $$
+\begin{itemize}
+  \item Wages increase in productivity $A_i$ and firm market access $FMA_i$. 
+  \item Reductions in transport costs ($d_{ni}$) increase firm market access and wages $w_i$. 
+\end{itemize}
+
+
+\subsection{Model inversion}
+Estimate $\sigma $ and $\alpha $ and parameterized symmetric bilateral trade costs $d_{ni}$. 
+
+
+\subsection{Counterfactual}
+
 
 
 \end{document}
