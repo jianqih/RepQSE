@@ -135,7 +135,39 @@ breaklinks=true
 \newcommand{\X}{\textbf{X}}
 
 \begin{document}
-\section{Model}
+\section{A Manu of QSM}
+\begin{enumerate}
+  \item \textbf{Preferences}: Homogeneous versus differentiated goods (love of variety).
+  \item \textbf{Production technology}: \begin{itemize}
+    \item Constant versus increasing returns 
+    \item Exogenous productivity differences and/or endogenous productivity 
+    \item Input-output linkages
+  \end{itemize}
+  \item Technology for trading goods 
+  \item Technology for idea flows 
+  \item Technology for the movement of people \begin{itemize}
+    \item Migration costs 
+    \item Commuting and commuting costs 
+    \item Agent heterogeneity
+    \item Congestion in transportation. 
+  \end{itemize}
+  \item Endowments \begin{itemize}
+    \item Population and skills
+    \item Spatial scope and units 
+    \item Capital and infrastructure
+  \end{itemize}
+  \item Equilibrium \begin{itemize}
+    \item CRS and perfect competition or IRS and monopolistic competition. 
+    \item General versus partial equilibrium 
+    \item Land ownership and the distribution of rents 
+    \item Trade balance: in any spaital model one has to take a stand on the spatial unit for which trade is balanced. 
+  \end{itemize}
+\end{enumerate}
+
+
+
+
+\section{The Conventional Model}
 An economy: a set $N$ regions indexed by $n$. Each region is endowed with an exogenous quality-adjusted supply of land $H_i$. $\bar{L}$ workers. Iceberg cost: $b_{ni} = b_{in}>1= b_{ii}$. 
 
 Preference over consumption $C_n$ and residential land use $h_n$
@@ -242,11 +274,11 @@ Using our expression for the domestic trade share on previous, slide this wage e
 \end{equation}
 Using two systems of equations~\eqref{eq:sys1}~\eqref{eq:sys2} for wages and population yields closed-form solution 
 \begin{equation}
-  w_n^{1-2\sigma} A_n^{\sigma -1} L_n^{(\sigma -1)\frac{1-\alpha }{\alpha }} H_n^{-(\sigma -1)\frac{1-\alpha }{\alpha }} = \phi .
+  w_n^{1-2\sigma} A_n^{\sigma -1} L_n^{(\sigma -1)\frac{1-\alpha }{\alpha }} H_n^{-(\sigma -1)\frac{1-\alpha }{\alpha }} = \phi .\label{eq:wage}
 \end{equation}
 After that, this system can be reduced to a single equation that determines the equilibrium population:
 \begin{equation}
-  L_n ^{\tilde{\sigma }\gamma _1} A_n ^{- \frac{(\sigma -1) (\sigma -1)}{2\sigma - 1}} H_n ^{- \frac{(\sigma -1) (\sigma -1)}{\alpha(2\sigma - 1)}} = \bar{W}^{1-\sigma } \sum_{i \in N}^{} \frac{1}{\sigma F} \left( \frac{\sigma }{\sigma -1} d_{ni} \right)^{1-\sigma } \left( L_i ^{\tilde{\sigma }\gamma _1} \right)^{\frac{\gamma _2}{\gamma _1}} A_i ^{- \frac{\sigma (\sigma -1)}{2\sigma - 1}} H_i ^{\frac{(1-\alpha)(\sigma -1) (\sigma -1)}{\alpha(2\sigma - 1)}}
+  L_n ^{\tilde{\sigma }\gamma _1} A_n ^{- \frac{(\sigma -1) (\sigma -1)}{2\sigma - 1}} H_n ^{- \frac{(\sigma -1) (\sigma -1)}{\alpha(2\sigma - 1)}} = \bar{W}^{1-\sigma } \sum_{i \in N}^{} \frac{1}{\sigma F} \left( \frac{\sigma }{\sigma -1} d_{ni} \right)^{1-\sigma } \left( L_i ^{\tilde{\sigma }\gamma _1} \right)^{\frac{\gamma _2}{\gamma _1}} A_i ^{- \frac{\sigma (\sigma -1)}{2\sigma - 1}} H_i ^{\frac{(1-\alpha)(\sigma -1) (\sigma -1)}{\alpha(2\sigma - 1)}}\label{eq:pop}
 \end{equation}
 where $\bar{W}$ is determined by the requirement that the labor market clears $\sum_{n \in N}^{} L_n = \bar{L}$. 
 and $$ \tilde{\sigma } \equiv \frac{\sigma -1}{2 \sigma -1}, \gamma _1 \equiv \sigma \frac{1-\alpha }{\alpha }, \gamma _2 \equiv 1 + \frac{\sigma }{\sigma -1}- (\sigma -1) \frac{1-\alpha }{\alpha } $$
@@ -278,10 +310,32 @@ where firm market access is defined as $$ FMA_i \equiv \sum_{n \in N}^{} d_{ni}^
 
 
 \subsection{Model inversion}
-Estimate $\sigma $ and $\alpha $ and parameterized symmetric bilateral trade costs $d_{ni}$. 
+\begin{itemize}
+  \item Rationalize data: has estimates $\sigma $ and $\alpha $
+  \item parameterized symmetric bilateral trade costs $\{d_{ni}\}$ and observed endogenous population $\left\{ L_n \right\}$ and nominal wages $\left\{ w_n \right\}$.
+  \item The model can be inverted to recover the unique values of unobserved quality-adjusted land $\left\{ H_n \right\}$ and productivities $\left\{ A_n \right\}$. More specific, inverting the model amounts to using Eq~\eqref{eq:wage} and Eq~\eqref{eq:pop}. 
+  \item After that, using Eq~\eqref{eq:pi} to determine unobs. $\pi _{ni}$.
+\end{itemize}
 
 
 \subsection{Counterfactual}
+
+
+\subsection{Welfare}
+Change trade costs can be expressed solely in terms of empirically observable sufficient statistics. 
+
+Perfect population mobility implies that the transport infrastructure improvement leads to reallocations of population across locations, until real wages are equalized. Hence \begin{equation}
+  \frac{\bar{V}^1 }{\bar{V}^0} = \left( \frac{\pi _{nn}^0}{\pi _{nn}^1} \right)^{\frac{\alpha }{\sigma -1}} \left( \frac{\lambda _n^0}{\lambda _n^1} \right)^{\frac{\sigma (1-\alpha ) - 1}{\sigma -1}}
+\end{equation}
+a larger reduction in a locations domestic trade share must be offset by a larger increase in its population to preserve real wage equalization
+
+
+\section{Quantitative Illustration}
+An economy on a $30 \times 30$ latitude and longitude grid. 
+Two countries: one is West and another is East. 
+Assume labor is perfectly mobile across locations within country but perfectly immobile across countries. 
+
+
 
 
 
