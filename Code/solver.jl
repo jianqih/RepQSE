@@ -1,6 +1,6 @@
 function solveHLwCtyOpen_E6(fund, dist, bord, bordc, NN; param = param)
     @unpack LL,alpha,sigma,LLwest, LLeast = param
-    
+    tol = 1e-6
     # extract location characteristics from fundamentals matrix;
     a=fund[:,1]; 
     H=fund[:,2]; 
@@ -47,7 +47,12 @@ function solveHLwCtyOpen_E6(fund, dist, bord, bordc, NN; param = param)
         L_e_r = round.(L_e .* (10^6))
 
         
-        if (income_r == expend_r) & (L_i_r == L_e_r)
+
+        excess_r = maximum(abs.(income .- expend))
+        excess_L = maximum(abs.(L_i .- L_e))
+        println("The excess L: ",excess_L)
+        println("The excess r: ",excess_r)
+        if (excess_L <= tol) & (excess_r <= tol)
             println("Convergence Achieved")
             return w_i,L_i,tradesh,dtradesh
         else
