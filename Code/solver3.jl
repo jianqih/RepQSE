@@ -57,8 +57,7 @@ function solveHLwCtyOpen_v2(fund, dist, bord, bordc, NN; param = param)
             w_e = expend ./ L_i;
 
             #update loop 
-            ex = sum(((w_e .- w_i)./(w_e + w_i)).^ 2)
-            if ex < tol
+            if income == expend
                 println("At first stage convergence achieved in $x iteration")
                 x = 10000000;
             else
